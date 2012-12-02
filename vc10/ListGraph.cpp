@@ -14,29 +14,8 @@ void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 
 }
 
-EdgeWeight ListGraph::weight(NodeID u, NodeID v) const{
-
-}
-
-std::list<NWPair> ListGraph::getAdj(NodeID u) const{
-
-}
-
-unsigned ListGraph::degree(NodeID u) const{
-
-}
-
-unsigned ListGraph::size() const{
-
-}
-
-unsigned ListGraph::numEdges() const{
-
-}
-
-
-
-EdgeWeight ListGraph::weight(NodeID u, NodeID v) const{
+EdgeWeight ListGraph::weight(NodeID u, NodeID v) const
+{
 	//iterator code from what we did in class
 	edgeList[u];
 	EList::const_iterator it;
@@ -48,4 +27,28 @@ EdgeWeight ListGraph::weight(NodeID u, NodeID v) const{
 	}
 
 	return 0.0;
+}
+
+std::list<NWPair> ListGraph::getAdj(NodeID u) const
+{
+	return edgeList[NULL];
+
+}
+
+unsigned ListGraph::degree(NodeID u) const
+{
+	return 0.0;
+
+}
+
+unsigned ListGraph::size() const
+{
+	return 0.0;
+
+}
+
+unsigned ListGraph::numEdges() const
+{
+	return 0.0;
+
 }

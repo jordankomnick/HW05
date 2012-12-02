@@ -22,6 +22,7 @@ MatrixGraph::~MatrixGraph(){ //may not need destructors, because you should only
 void MatrixGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight)
 {
 	M[u][v] = weight;
+	M[v][u] = weight;
 }
 
 EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const
@@ -31,8 +32,10 @@ EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const
 	return 0;
 }
 
-std::list<NWPair> MatrixGraph::getAdj(NodeID u) const{
-
+std::list<NWPair> MatrixGraph::getAdj(NodeID u) const
+{
+	EList temp;
+	return temp;
 }
 
 unsigned MatrixGraph::degree(NodeID u) const{
@@ -43,8 +46,9 @@ unsigned MatrixGraph::size() const{
 	return 0;
 }
 
-unsigned MatrixGraph::numEdges() const{
-	return 0;
+unsigned MatrixGraph::numEdges() const
+{
+	return num_edges;
 }
 
 
