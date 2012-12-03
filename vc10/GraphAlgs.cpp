@@ -1,6 +1,11 @@
+//GraphAlgs.cpp
+//All code written by Jordan Komnick for CSE274
+//Solves the travelling salesperson problem
 
 #include "GraphAlgs.h"
 
+//The original method that is called in the tests
+//Documentation is found in GraphAlgs.h
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G)
 {
 	int* arr = new int[G -> size()];
@@ -8,14 +13,17 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G)
 	return Tour(arr, arr_length, 0, G);
 }
 
-// mostly taken from the pseudocode we went over in class
+//A helper method I wrote for my implementation of the travelling salesperson problem
+//Returns: A pair with the first being a list of nodes in the order they are visited and the second being the length of the trip
+//Preconditions: Same as the preconditions for TSP(Graph* G)
+//This implementation is mostly taken from the pseudocode we went over in class
 std::pair<std::vector<NodeID>, EdgeWeight> Tour(int* arr, int arr_length, int start, Graph* G)
 	{
 		int* bestTour;
 		float bestTourLength;
 		if(arr_length - start == 1)
 		{
-			//check if arr is better than best tour and update
+			//check if arr is better than best tour and update as necessary
 			int currentTour = 0;
 			for(int i = 0; i < arr_length - 1; i++)
 			{
@@ -31,7 +39,7 @@ std::pair<std::vector<NodeID>, EdgeWeight> Tour(int* arr, int arr_length, int st
 		{
 			for(int i = start; i < arr_length; i++)
 			{
-				//check length, break if not
+				//check length, break if current tour is already longer than the best tour to save time
 				int currentTour = 0;
 				for(int j = 0; j < arr_length - j; i++)
 				{

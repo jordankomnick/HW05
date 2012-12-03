@@ -1,3 +1,7 @@
+//ListGraph.cpp
+//All code written by Jordan Komnick for CSE274
+//Represents a graph of nodes in a List format
+//Method documentation is found in Graph.h
 
 #include "ListGraph.h"
 

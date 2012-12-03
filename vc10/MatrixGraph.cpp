@@ -1,3 +1,7 @@
+//MatrixGraph.cpp
+//All code written by Jordan Komnick for CSE274
+//Represents a graph of nodes in a matrix format
+//Method documentation is found in Graph.h
 
 #include "MatrixGraph.h"
 
@@ -16,7 +20,9 @@ MatrixGraph::MatrixGraph(unsigned num_nodes)
 	num_nodes = num_nodes;
 }
 
-MatrixGraph::~MatrixGraph(){ //may not need destructors, because you should only delete things YOU made using new
+//destructor is unnecessary for my implementation
+MatrixGraph::~MatrixGraph()
+{
 
 }
 
