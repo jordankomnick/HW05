@@ -45,10 +45,10 @@ std::pair<std::vector<NodeID>, EdgeWeight> Tour(int* arr, int arr_length, int st
 				arr[start] = arr[i];
 				arr[i] = temp;
 				Tour(arr, arr_length , start+1, G);
-				int temp = arr[start];
+				int temp2 = arr[start];
 				arr[start] = arr[i];
-				arr[i] = temp;
+				arr[i] = temp2;
 			}
 		}
-		return std::make_pair(bestTour, bestTourLength);
+		return std::make_pair(*bestTour, bestTourLength);
 	}

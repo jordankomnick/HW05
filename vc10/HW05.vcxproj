@@ -108,6 +108,7 @@
     <ClCompile Include="..\include\StarbucksMap.cpp" />
     <ClCompile Include="..\include\Tester.cpp" />
     <ClCompile Include="..\src\HW05App.cpp" />
+    <ClCompile Include="GraphAlgs.cpp" />
     <ClCompile Include="ListGraph.cpp" />
     <ClCompile Include="MatrixGraph.cpp" />
   </ItemGroup>
