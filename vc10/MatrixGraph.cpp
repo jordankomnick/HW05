@@ -35,6 +35,11 @@ EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const
 std::list<NWPair> MatrixGraph::getAdj(NodeID u) const
 {
 	EList temp;
+	int i = 0;
+	while(M[u][i] != NULL)
+	{
+		temp.push_back(NWPair(i, M[u][i]));
+	}
 	return temp;
 }
 
