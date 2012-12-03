@@ -13,6 +13,7 @@ MatrixGraph::MatrixGraph(unsigned num_nodes)
 		}
 	}
 	num_edges = 0;
+	num_nodes = num_nodes;
 }
 
 MatrixGraph::~MatrixGraph(){ //may not need destructors, because you should only delete things YOU made using new
@@ -23,6 +24,7 @@ void MatrixGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight)
 {
 	M[u][v] = weight;
 	M[v][u] = weight;
+	num_edges++;
 }
 
 EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const
@@ -36,19 +38,28 @@ std::list<NWPair> MatrixGraph::getAdj(NodeID u) const
 {
 	EList temp;
 	int i = 0;
-	while(M[u][i] != NULL)
+	for(int i = 0; i < num_nodes; i++)
 	{
-		temp.push_back(NWPair(i, M[u][i]));
+		if(M[u][i] > 0)
+			temp.push_back(NWPair(i, M[u][i]));
 	}
 	return temp;
 }
 
-unsigned MatrixGraph::degree(NodeID u) const{
-	return 0;
+unsigned MatrixGraph::degree(NodeID u) const
+{
+	int count = 0;
+	for(int i = 0; i < num_nodes; i++)
+	{
+		if(M[u][i] > 0)
+			count++;
+	}
+	return count;
 }
 
-unsigned MatrixGraph::size() const{
-	return 0;
+unsigned MatrixGraph::size() const
+{
+	return num_nodes;
 }
 
 unsigned MatrixGraph::numEdges() const

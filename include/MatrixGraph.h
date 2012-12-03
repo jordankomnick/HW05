@@ -27,4 +27,5 @@ class MatrixGraph : public Graph {
 
   std::vector<std::vector<EdgeWeight> > M;
   int num_edges;
+  int num_nodes;
 };
