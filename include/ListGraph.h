@@ -27,4 +27,5 @@ class ListGraph : public Graph {
 
   std::vector<EList> edgeList;
   int num_edges;
+  int num_nodes;
 };
